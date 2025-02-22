@@ -1,0 +1,2 @@
+# FinalFantasy
+Inspired by FFXIV
