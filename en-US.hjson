@@ -1,0 +1,17 @@
+Mods: {
+	FinalFantasy: {
+		Keybinds: {
+			RandomBuff.DisplayName: Random Buff
+			LearningExample.DisplayName: Learning Example
+			GlekKeybind.DisplayName: Glek Keybind
+			GlekoPort.DisplayName: Gleko Port
+		}
+
+		Items: {
+			GlekoPort: {
+				DisplayName: Gleko Port
+				Tooltip: ""
+			}
+		}
+	}
+}
