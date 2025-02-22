@@ -62,7 +62,6 @@ namespace FinalFantasy
             if(KeybindSystem.GlekoPort.JustPressed)
             {
                 Tile tile = Framing.GetTileSafely((int)Main.MouseWorld.X /16, (int)Main.MouseWorld.Y / 16);
-                TileID tileID = new TileID();
                 Player localPlayer = Main.LocalPlayer;
                 Vector2 playerPos = player.Center;
                 if (!tile.HasTile || IsTree(tile))
