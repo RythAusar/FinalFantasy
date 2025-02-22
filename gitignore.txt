@@ -37,3 +37,22 @@ solutions/tModLoader v*
 solutions/Release/
 **/msbuild.binlog
 /steam_build
+
+# Скомпільовані файли модів
+*.tmod
+
+# Тимчасові файли та кеш
+*.sav
+*.log
+*.csproj.user
+
+# Налаштування IDE
+.vscode/
+*.suo
+*.user
+*.cache
+*.tmp
+
+# Папки з білдами
+bin/
+obj/
