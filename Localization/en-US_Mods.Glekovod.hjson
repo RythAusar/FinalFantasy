@@ -4,7 +4,7 @@ Items: {
 		DisplayName: GlekoPort
 
 		Mods: {
-			MyMod: {
+			FinalFantasy: {
 				Keybind: {
 					RandomBuff: Activate Random Buff
 					GlekoPort: Teleport
