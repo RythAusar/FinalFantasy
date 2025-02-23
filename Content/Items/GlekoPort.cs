@@ -18,8 +18,6 @@ namespace FinalFantasy.Content.Items
     // Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
     internal class GlekoPort : ModItem
     {
-        public ushort[] trees = { 171, 72, 323, 170, 589, 584, 634, 588, 586, 293, 587, 5, 585, 583, 596, 595, 615, 616};
-
         public static bool IsTree(Tile tile)
         {
             if (tile == null) return false;
@@ -68,10 +66,7 @@ namespace FinalFantasy.Content.Items
                     player.Teleport(newPos, 1, 0);
                 }
 
-
             }
         }
-      
-
     }
 }
