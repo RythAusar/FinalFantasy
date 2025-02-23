@@ -10,8 +10,15 @@ Mods: {
 		Items: {
 			GlekoPort: {
 				DisplayName: Gleko Port
-				Tooltip: ""
+				Tooltip: This item was created by Glek
+			}
+
+			BloodBullet: {
+				DisplayName: Blood Bullet
+				Tooltip: This item was created by Gigachad
 			}
 		}
+
+		Projectiles.ProjectileBloodBullet.DisplayName: Projectile Blood Bullet
 	}
 }
