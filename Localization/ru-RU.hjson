@@ -1,0 +1,24 @@
+Mods: {
+	FinalFantasy: {
+		Keybinds: {
+			// RandomBuff.DisplayName: Random Buff
+			// LearningExample.DisplayName: Learning Example
+			// GlekKeybind.DisplayName: Glek Keybind
+			// GlekoPort.DisplayName: Gleko Port
+		}
+
+		Items: {
+			GlekoPort: {
+				DisplayName: Глекопорт
+				Tooltip: Этот предмет был создан ГлЭком
+			}
+
+			BloodBullet: {
+				DisplayName: Кровавая пуля
+				Tooltip: Этот предмет был создан Гигачадом
+			}
+		}
+
+		// Projectiles.ProjectileBloodBullet.DisplayName: Projectile Blood Bullet
+	}
+}
