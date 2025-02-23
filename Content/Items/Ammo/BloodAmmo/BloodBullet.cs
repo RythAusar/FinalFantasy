@@ -4,7 +4,7 @@ using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace FinalFantasy.BloodAmmo
+namespace FinalFantasy.Content.Items.Ammo.BloodAmmo
 {
     public class BloodBullet : ModItem
     {

@@ -59,7 +59,7 @@ namespace FinalFantasy.Content.Projectiles.BloodAmmo
         }
 
         public override bool PreDraw(ref Color lightColor) {
-            Texture2D texture = TextureAssets.Projectile[Type].Value;
+            Texture2D texture = ModContent.Request<Texture2D>("FinalFantasy/Content/Projectiles/BloodAmmo/ProjectileBloodBullet").Value;
 
             Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
             for (int k = Projectile.oldPos.Length - 1; k > 0; k--){
@@ -68,6 +68,11 @@ namespace FinalFantasy.Content.Projectiles.BloodAmmo
                 Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
             }
             return true;
+        }
+
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            target.AddBuff(BuffID.Ichor, 600);
         }
 
         public override void OnKill(int timeLeft) {
