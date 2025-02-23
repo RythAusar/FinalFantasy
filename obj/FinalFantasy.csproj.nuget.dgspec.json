@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nikita\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\FinalFantasy.csproj": {}
+    "C:\\Users\\USER\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\FinalFantasy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nikita\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\FinalFantasy.csproj": {
+    "C:\\Users\\USER\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\FinalFantasy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nikita\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\FinalFantasy.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\FinalFantasy.csproj",
         "projectName": "FinalFantasy",
-        "projectPath": "C:\\Users\\Nikita\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\FinalFantasy.csproj",
-        "packagesPath": "C:\\Users\\Nikita\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nikita\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\obj\\",
+        "projectPath": "C:\\Users\\USER\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\FinalFantasy.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USER\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Nikita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

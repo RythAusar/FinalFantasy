@@ -12,6 +12,13 @@ Mods: {
 				DisplayName: Gleko Port
 				Tooltip: ""
 			}
+
+			BloodBullet: {
+				DisplayName: Blood Bullet
+				Tooltip: ""
+			}
 		}
+
+		Projectiles.ProjectileBloodBullet.DisplayName: Projectile Blood Bullet
 	}
 }
