@@ -12,10 +12,10 @@ using Terraria.WorldBuilding;
 using Terraria.GameInput;
 using ExampleMod.Common.Systems;
 using System.Security.Cryptography.X509Certificates;
+using Terraria.DataStructures;
 
 namespace FinalFantasy.Content.Items
 {
-    // Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
     internal class GlekoPort : ModItem
     {
         public static bool IsTree(Tile tile)
@@ -40,7 +40,6 @@ namespace FinalFantasy.Content.Items
               tile.TileType == 595 ||
               tile.TileType == 615 ||
               tile.TileType == 616;
-
         }
 
         public override void SetDefaults()
@@ -65,8 +64,15 @@ namespace FinalFantasy.Content.Items
                     Vector2 newPos = new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35));
                     player.Teleport(newPos, 1, 0);
                 }
-
             }
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.DirtBlock, 10);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
         }
     }
 }

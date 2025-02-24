@@ -26,9 +26,9 @@ namespace FinalFantasy.Content.Items.Ammo.BloodAmmo
             Item.rare = ItemRarityID.Green;
             Item.shoot = ModContent.ProjectileType<Content.Projectiles.BloodAmmo.ProjectileBloodBullet>();
             Item.shootSpeed = 4.5f;
-            Item.ammo = AmmoID.Bullet;
+            Item.ammo = AmmoID.Bullet; 
         }
-
+        
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
