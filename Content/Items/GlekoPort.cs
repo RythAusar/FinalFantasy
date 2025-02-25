@@ -52,17 +52,20 @@ namespace FinalFantasy.Content.Items
             Item.rare = ItemRarityID.Master;
             Item.buyPrice(0,0,0,1);
             Item.sellPrice(100, 0, 0, 0);
+            Item.DamageType = DamageClass.Summon;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
+            player.GetDamage(DamageClass.Summon) += 0.50f;
             if (KeybindSystem.GlekoPort.JustPressed)
             {
                 Tile tile = Framing.GetTileSafely((int)Main.MouseWorld.X / 16, (int)Main.MouseWorld.Y / 16);
                 if (!tile.HasTile || IsTree(tile))
                 {
-                    Vector2 newPos = new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35));
-                    player.Teleport(newPos, 1, 0);
+                    //Vector2 newPos = new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35));
+
+                    player.Teleport(new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35)), 1, 0);
                 }
             }
         }
