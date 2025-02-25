@@ -17,6 +17,11 @@ Mods: {
 				DisplayName: Кровавая пуля
 				Tooltip: Этот предмет был создан Гигачадом
 			}
+
+			ItemBlood: {
+				 DisplayName: Кровь
+				 Tooltip: ""
+			}
 		}
 
 		// Projectiles.ProjectileBloodBullet.DisplayName: Projectile Blood Bullet

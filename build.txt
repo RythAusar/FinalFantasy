@@ -1,3 +1,4 @@
 displayName = Final Fantasy
 author = Ezvold & Glek
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
 version = 0.1

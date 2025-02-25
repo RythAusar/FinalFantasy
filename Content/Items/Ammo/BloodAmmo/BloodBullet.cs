@@ -1,4 +1,5 @@
 ﻿using System;
+using FinalFantasy.Content.Items.ItemsForCraft;
 using Terraria;
 using Terraria.GameContent.UI;
 using Terraria.ID;
@@ -31,10 +32,11 @@ namespace FinalFantasy.Content.Items.Ammo.BloodAmmo
         
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.DirtBlock, 10);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.Register();
+            CreateRecipe()
+                .AddIngredient(ModContent.ItemType<ItemBlood>(), 1)
+                .AddIngredient(ItemID.SilverBullet, 1)
+                .AddTile(TileID.WorkBenches)
+                .Register();
         }
     }
 }

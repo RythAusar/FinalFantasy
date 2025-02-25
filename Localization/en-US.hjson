@@ -17,6 +17,11 @@ Mods: {
 				DisplayName: Blood Bullet
 				Tooltip: This item was created by Gigachad
 			}
+
+			ItemBlood: {
+				DisplayName: Blood
+				Tooltip: ""
+			}
 		}
 
 		Projectiles.ProjectileBloodBullet.DisplayName: Projectile Blood Bullet
