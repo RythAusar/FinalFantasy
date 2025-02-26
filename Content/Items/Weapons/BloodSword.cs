@@ -27,25 +27,34 @@ namespace FinalFantasy.Content.Items.Weapons
             Item.UseSound = SoundID.Item1;
         }
 
-        public override void MeleeEffects(Player player, Rectangle hitbox)
+        /* public override void MeleeEffects(Player player, Rectangle hitbox)
         {
-            Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.LifeDrain);
+            int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.LifeDrain);
+            if (Main.netMode == NetmodeID.MultiplayerClient) {
+                NetMessage.SendData(MessageID.SyncD, -1, -1, null, dust);
+            }
             //DustID.Water_BloodMoon
             //DustID.CrimtaneWeapons
             //DustID.VampireHeal
             //DustID.LifeDrain
-        }
+        } */
 
         public override void HoldItem(Player player)
         {
-            Vector2 mouseWorld = Main.MouseWorld;
-            player.direction = (mouseWorld.X > player.Center.X) ? 1 : -1;
+            if (player.itemAnimation > 0) {
+                Vector2 mouseWorld = Main.MouseWorld;
+                player.direction = (mouseWorld.X > player.Center.X) ? 1 : -1;
+            }
         }
 
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.OnFire, 60);
         }
+
+        public override bool MeleePrefix() {
+			return true;
+		}
 
         public override void AddRecipes()
         {
