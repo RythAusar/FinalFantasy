@@ -13,6 +13,7 @@ using Terraria.GameInput;
 using ExampleMod.Common.Systems;
 using System.Security.Cryptography.X509Certificates;
 using Terraria.DataStructures;
+using Terraria.Localization;
 
 namespace FinalFantasy.Content.Items.Accessories
 {
@@ -66,9 +67,11 @@ namespace FinalFantasy.Content.Items.Accessories
                     if(player.whoAmI == Main.myPlayer)
                     {
                         player.Teleport(newPos, 1, 0);
-                        if (Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server)//remoteClient - Which client receives the message (-1 = all clients); ignoreClient - Which client to ignore (-1 = none); text - Not used here (null); entityWhoAmI - The entity being teleported (player.whoAmI or npc.whoAmI); X - New X position of entity; Y - New Y position of entity
+                        if (Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server)
                         {
-                            NetMessage.SendData(MessageID.TeleportEntity, -1, -1, Terraria.Localization.NetworkText.FromLiteral("Nigger has been teleported"), player.whoAmI, newPos.X, newPos.Y);
+                            //remoteClient - Which client receives the message (-1 = all clients); ignoreClient - Which client to ignore (-1 = none); text - Not used here (null); entityWhoAmI - The entity being teleported (player.whoAmI or npc.whoAmI); X - New X position of entity; Y - New Y position of entity
+                            NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI, newPos.X, newPos.Y);
+                            NetMessage.SendData(MessageID.ChatText, -1, -1, NetworkText.FromLiteral("BLACK NIGGERS"), 255);
                         }
                     }
                 }
