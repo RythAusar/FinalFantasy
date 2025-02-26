@@ -33,10 +33,12 @@ namespace FinalFantasy.Content.Items.Weapons
             Vector2 position = new Vector2(hitbox.X, hitbox.Y);
             int width = hitbox.Width;
             int height = hitbox.Height;
-
-            Dust.NewDust(position, width, height, dustType);
-            FinalFantasy.SyncDust(dustType, position, width, height);
-
+            if(Main.netMode != NetmodeID.MultiplayerClient)
+            {
+                Dust.NewDust(position, width, height, dustType);
+                NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI);
+            }
+            //FinalFantasy.SyncDust(dustType, position, width, height); 
             //DustID.Water_BloodMoon
             //DustID.CrimtaneWeapons
             //DustID.VampireHeal
