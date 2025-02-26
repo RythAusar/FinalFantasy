@@ -1,4 +1,6 @@
 using Terraria;
+using Terraria.GameContent.UI;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace FinalFantasy.Content.Items.ItemsForCraft 
@@ -15,6 +17,7 @@ namespace FinalFantasy.Content.Items.ItemsForCraft
             Item.width = 22;
             Item.height = 22;
             Item.maxStack = 9999;
+            Item.rare = ItemRarityID.Blue;
             Item.buyPrice(0,0,10,0);
             Item.sellPrice(0,0,0,50);
         }

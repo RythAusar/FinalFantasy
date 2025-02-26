@@ -19,8 +19,13 @@ Mods: {
 			}
 
 			ItemBlood: {
-				 DisplayName: Кровь
+				DisplayName: Кровь
+				Tooltip: ""
+			}
+
+			BloodSword: {
 				 Tooltip: ""
+				 DisplayName: Кровавый Меч
 			}
 		}
 

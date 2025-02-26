@@ -28,7 +28,7 @@ namespace FinalFantasy
             };
 
             if (zombieTypes.Contains(npc.type)) {
-                /* IItemDropRule copperArmorRule = ItemDropRule.Common(ItemID.CopperHelmet, 1);
+                /* IItemDropRule copperArmorRule = ItemDropRule.Common(ItemID.CopperHelmet, 5);
                 copperArmorRule.OnSuccess(ItemDropRule.Common(ItemID.CopperChainmail, 1));
                 copperArmorRule.OnSuccess(ItemDropRule.Common(ItemID.CopperGreaves, 1));
                 npcLoot.Add(copperArmorRule); */

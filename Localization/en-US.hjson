@@ -22,6 +22,11 @@ Mods: {
 				DisplayName: Blood
 				Tooltip: ""
 			}
+
+			BloodSword: {
+				Tooltip: ""
+				DisplayName: Blood Sword
+			}
 		}
 
 		Projectiles.ProjectileBloodBullet.DisplayName: Projectile Blood Bullet
