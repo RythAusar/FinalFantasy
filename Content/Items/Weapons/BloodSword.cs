@@ -33,11 +33,9 @@ namespace FinalFantasy.Content.Items.Weapons
             Vector2 position = new Vector2(hitbox.X, hitbox.Y);
             int width = hitbox.Width;
             int height = hitbox.Height;
-            if(Main.netMode != NetmodeID.MultiplayerClient)
-            {
-                Dust.NewDust(position, width, height, dustType);
-                NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI);
-            }
+            
+            Dust.NewDust(position, width, height, dustType);
+           
             //FinalFantasy.SyncDust(dustType, position, width, height); 
             //DustID.Water_BloodMoon
             //DustID.CrimtaneWeapons
@@ -50,6 +48,7 @@ namespace FinalFantasy.Content.Items.Weapons
             if (player.itemAnimation > 0) {
                 Vector2 mouseWorld = Main.MouseWorld;
                 player.direction = (mouseWorld.X > player.Center.X) ? 1 : -1;
+                NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI);
             }
         }
 
