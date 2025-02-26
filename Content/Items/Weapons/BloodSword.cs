@@ -27,17 +27,21 @@ namespace FinalFantasy.Content.Items.Weapons
             Item.UseSound = SoundID.Item1;
         }
 
-        /* public override void MeleeEffects(Player player, Rectangle hitbox)
+        public override void MeleeEffects(Player player, Rectangle hitbox)
         {
-            int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.LifeDrain);
-            if (Main.netMode == NetmodeID.MultiplayerClient) {
-                NetMessage.SendData(MessageID.SyncD, -1, -1, null, dust);
-            }
+            int dustType = DustID.LifeDrain;
+            Vector2 position = new Vector2(hitbox.X, hitbox.Y);
+            int width = hitbox.Width;
+            int height = hitbox.Height;
+
+            Dust.NewDust(position, width, height, dustType);
+            FinalFantasy.SyncDust(dustType, position, width, height);
+
             //DustID.Water_BloodMoon
             //DustID.CrimtaneWeapons
             //DustID.VampireHeal
             //DustID.LifeDrain
-        } */
+        }
 
         public override void HoldItem(Player player)
         {
