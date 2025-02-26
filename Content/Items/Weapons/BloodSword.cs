@@ -48,7 +48,6 @@ namespace FinalFantasy.Content.Items.Weapons
             if (player.itemAnimation > 0) {
                 Vector2 mouseWorld = Main.MouseWorld;
                 player.direction = (mouseWorld.X > player.Center.X) ? 1 : -1;
-                NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI);
             }
         }
 
