@@ -66,7 +66,7 @@ namespace FinalFantasy.Content.Items.Accessories
                     if(player.whoAmI == Main.myPlayer)
                     {
                         player.Teleport(newPos, 1, 0);
-                        if (Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server)
+                        if (Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server)//remoteClient - Which client receives the message (-1 = all clients); ignoreClient - Which client to ignore (-1 = none); text - Not used here (null); entityWhoAmI - The entity being teleported (player.whoAmI or npc.whoAmI); X - New X position of entity; Y - New Y position of entity
                         {
                             NetMessage.SendData(MessageID.TeleportEntity, -1, -1, Terraria.Localization.NetworkText.FromLiteral("Nigger has been teleported"), player.whoAmI, newPos.X, newPos.Y);
                         }
