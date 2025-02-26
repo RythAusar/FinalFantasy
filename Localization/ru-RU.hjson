@@ -24,8 +24,8 @@ Mods: {
 			}
 
 			BloodSword: {
-				 Tooltip: ""
-				 DisplayName: Кровавый Меч
+				Tooltip: ""
+				DisplayName: Кровавый Меч
 			}
 		}
 

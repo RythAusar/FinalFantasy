@@ -1,5 +1,4 @@
-//using ExampleMod.Common.Players;
-//using FinalFantasy.Common.Systems;
+//using FinalFantasy.Content;
 //using FinalFantasy.Content.Items.Consumables;
 //using FinalFantasy.Content.NPCs;
 using FinalFantasy.Content.Items;
@@ -21,14 +20,14 @@ namespace FinalFantasy
 			ResourceEffect
         }
 
-        /* public override void HandlePacket(BinaryReader reader, int whoAmI)
+       /*  public override void HandlePacket(BinaryReader reader, int whoAmI)
         {
             MessageType msgType = (MessageType)reader.ReadByte();
 
             switch (msgType)
             {
                 case MessageType.ResourceEffect:
-                    ExampleResourcePlayer.HandleResourceEffectMessage(reader, whoAmI);
+                    ResourcePlayer.HandleResourceEffectMessage(reader, whoAmI);
                     break;
                 default:
                    Logger.WarnFormat("ExampleMod: Unknown Message type: {0}", msgType);
