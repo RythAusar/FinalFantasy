@@ -55,19 +55,30 @@ namespace FinalFantasy.Content.Items
             Item.DamageType = DamageClass.Summon;
         }
 
-        public override void UpdateAccessory(Player player, bool hideVisual)
+        public static void TeleportPlayer(Player player)
         {
-            player.GetDamage(DamageClass.Summon) += 0.50f;
             if (KeybindSystem.GlekoPort.JustPressed)
             {
                 Tile tile = Framing.GetTileSafely((int)Main.MouseWorld.X / 16, (int)Main.MouseWorld.Y / 16);
                 if (!tile.HasTile || IsTree(tile))
                 {
-                    //Vector2 newPos = new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35));
-
-                    player.Teleport(new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35)), 1, 0);
+                    Vector2 newPos = new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35));
+                    if(player.whoAmI == Main.myPlayer)
+                    {
+                        player.Teleport(newPos, 1, 0);
+                        if (Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server)
+                        {
+                            NetMessage.SendData(MessageID.TeleportEntity, -1, -1, Terraria.Localization.NetworkText.FromLiteral("Nigger has been teleported"), player.whoAmI, newPos.X, newPos.Y);
+                        }
+                    }
                 }
             }
+        }
+
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            player.GetDamage(DamageClass.Summon) += 0.50f;
+            TeleportPlayer(player);
         }
 
         public override void AddRecipes()
@@ -79,3 +90,25 @@ namespace FinalFantasy.Content.Items
         }
     }
 }
+
+
+/*
+ * public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            player.GetDamage(DamageClass.Summon) += 0.50f;
+            if (KeybindSystem.GlekoPort.JustPressed)
+            {
+                Tile tile = Framing.GetTileSafely((int)Main.MouseWorld.X / 16, (int)Main.MouseWorld.Y / 16);
+                if (!tile.HasTile || IsTree(tile))
+                {
+                    //Vector2 newPos = new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35));
+
+                    player.Teleport(new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35)), 1, 0);
+                    if(Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server)
+                    {
+                        NetMessage.SendData(MessageID.TeleportEntity, -1, -1, Terraria.Localization.NetworkText.FromLiteral("Nigger has been teleported"), player.whoAmI);
+                    }
+                }
+            }
+        }
+*/
