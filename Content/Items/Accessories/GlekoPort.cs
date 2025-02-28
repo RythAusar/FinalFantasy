@@ -8,19 +8,19 @@ using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Microsoft.Xna.Framework;
-using Terraria.WorldBuilding;
-using Terraria.GameInput;
 using ExampleMod.Common.Systems;
 using System.Security.Cryptography.X509Certificates;
 using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.Chat;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace FinalFantasy.Content.Items.Accessories
 {
     internal class GlekoPort : ModItem
     {
-        public static bool IsTree(Tile tile)
+
+        public static bool isTree(Tile tile)
         {
             if (tile == null) return false;
 
@@ -62,18 +62,18 @@ namespace FinalFantasy.Content.Items.Accessories
             if (KeybindSystem.GlekoPort.JustPressed)
             {
                 Tile tile = Framing.GetTileSafely((int)Main.MouseWorld.X / 16, (int)Main.MouseWorld.Y / 16);
-                if (!tile.HasTile || IsTree(tile))
+                if (!tile.HasTile || isTree(tile))
                 {
                     Vector2 newPos = new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35));
                     if(player.whoAmI == Main.myPlayer)
                     {
-                        player.Teleport(newPos, 1, 0);
+                        player.Teleport(newPos, 1, 1);
                         if (Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server)
                         {
                             //remoteClient - Which client receives the message (-1 = all clients); ignoreClient - Which client to ignore (-1 = none); text - Not used here (null); entityWhoAmI - The entity being teleported (player.whoAmI or npc.whoAmI); X - New X position of entity; Y - New Y position of entity
-                            NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI, newPos.X, newPos.Y);
+                            NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI, newPos.X, newPos.Y, 1);
                             //Server broadcasting message in ingame chat to clients
-                            ChatHelper.BroadcastChatMessage(Terraria.Localization.NetworkText.FromLiteral("BLACK NIGGERS"), Color.White, -1);
+                            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("BLACK NIGGERS"), Color.White, -1);
                         }
                     }
                 }
