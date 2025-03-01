@@ -7,10 +7,12 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <Reference Include="Luminance">
+	    <HintPath>Luminance.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
 
 	<!-- References -->
-	<ItemGroup>
-		
-	</ItemGroup>
 
 </Project>

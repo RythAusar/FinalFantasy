@@ -12,12 +12,16 @@ using ExampleMod.Common.Systems;
 using System.Security.Cryptography.X509Certificates;
 using Terraria.DataStructures;
 using Terraria.Localization;
+using Terraria.Enums;
+using Terraria.Graphics.Effects;
+using System.Net.Http.Headers;
+using Microsoft.Xna.Framework.Graphics;
+//using Luminance.Core.Graphics;
 
 namespace FinalFantasy.Content.Items.Accessories
 {
     public class GlekoStop : ModItem
     {
-
         public override void SetStaticDefaults()
         {
             ItemID.Sets.AnimatesAsSoul[Item.type] = true;
@@ -40,9 +44,22 @@ namespace FinalFantasy.Content.Items.Accessories
         {
             player.GetDamage(DamageClass.Generic) += 0.20f;
 
-            if (KeybindSystem.GlekoStop.JustPressed)
+            if (KeybindSystem.GlekoStop.JustPressed && !TimeStop.timeFreeze)
             {
+                TimeStop.timeFreeze = true;
+                TimeStop.timeFreezeLength = 600;
                 player.AddBuff(ModContent.BuffType<TimeStopBuff>(), TimeStop.timeFreezeLength);
+            }
+
+            if (TimeStop.timeFreeze)
+            {
+                TimeStop.timeFreezeLength--;
+
+                if (TimeStop.timeFreezeLength <= 0)
+                {
+                    TimeStop.timeFreeze = false;
+                    TimeStop.timeFreezeLength = 600;
+                }
             }
         }
         
@@ -53,26 +70,31 @@ namespace FinalFantasy.Content.Items.Accessories
 
         public override bool PreAI(NPC npc)
         {
+            bool retval = base.PreAI(npc);
             if (TimeStop.timeFreeze)
             {
-                npc.velocity = Vector2.Zero;
+                //npc.velocity = Vector2.Zero;
+                npc.position = npc.oldPosition;
+                npc.frameCounter = 0;
+                retval = false;
+            }
+            return retval;
+        }
+
+
+        public override bool CanHitPlayer(NPC npc, Player target, ref int cooldownSlot)
+        {
+            if(TimeStop.timeFreeze)
+            {
                 return false;
             }
             else
             {
-                return base.PreAI(npc);
+                return true;
             }
+                
         }
 
-        public override void FindFrame(NPC npc, int frameHeight)
-        {
-            if (TimeStop.timeFreeze == true)
-            {
-                npc.frameCounter = 0;
-                return;
-            }
-            base.FindFrame(npc, frameHeight);
-        }
     }
 
     public class TimeStopGlobalProjectile : GlobalProjectile
@@ -93,8 +115,7 @@ namespace FinalFantasy.Content.Items.Accessories
     public class TimeStop
     {
         public static bool timeFreeze = false;
-        public static int timeFreezeLength = 600;
-        public static int timeFreezeLengthInSeconds = 10;
+        public static int timeFreezeLength;
     }
 
     public class TimeStopBuff : ModBuff
@@ -109,17 +130,9 @@ namespace FinalFantasy.Content.Items.Accessories
 
         }
 
-        public override void Update(Player player, ref int buffIndex)
-        {
-            TimeStop.timeFreeze = true;
-            TimeStop.timeFreezeLengthInSeconds -= 1;
-            if (TimeStop.timeFreezeLengthInSeconds == 0)
-            {
-                TimeStop.timeFreeze = false;
-                TimeStop.timeFreezeLengthInSeconds = 10;
-            }
-        }
+        
     }
+    
 
 
 }
