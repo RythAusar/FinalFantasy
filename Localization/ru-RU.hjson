@@ -5,6 +5,7 @@ Mods: {
 			// LearningExample.DisplayName: Learning Example
 			// GlekKeybind.DisplayName: Glek Keybind
 			// GlekoPort.DisplayName: Gleko Port
+			// GlekoStop.DisplayName: Gleko Stop
 		}
 
 		Items: {
@@ -27,8 +28,25 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Кровавый Меч
 			}
+
+			GlekoStop: {
+				// DisplayName: Gleko Stop
+				// Tooltip: ""
+			}
+
+			Ascalon: {
+				// DisplayName: Ascalon
+				// Tooltip: ""
+			}
 		}
 
 		// Projectiles.ProjectileBloodBullet.DisplayName: Projectile Blood Bullet
+
+		Buffs: {
+			TimeStopBuff: {
+				// DisplayName: Time Stop Buff
+				// Description: Mods.FinalFantasy.Buffs.TimeStopBuff.Description
+			}
+		}
 	}
 }

@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Nikita\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1A3A6B-96F0-4A65-B78A-32EE543C61FF}|FinalFantasy.csproj|c:\\users\\nikita\\documents\\my games\\terraria\\tmodloader\\modsources\\finalfantasy\\content\\items\\accessories\\glekostop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE1A3A6B-96F0-4A65-B78A-32EE543C61FF}|FinalFantasy.csproj|solutionrelative:content\\items\\accessories\\glekostop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nikita\\Desktop\\FargowiltasSouls\\Content\\Items\\Accessories\\Enchantments\\StardustEnchant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StardustEnchant.cs",
+              "DocumentMoniker": "C:\\Users\\Nikita\\Desktop\\FargowiltasSouls\\Content\\Items\\Accessories\\Enchantments\\StardustEnchant.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Desktop\\FargowiltasSouls\\Content\\Items\\Accessories\\Enchantments\\StardustEnchant.cs",
+              "ToolTip": "C:\\Users\\Nikita\\Desktop\\FargowiltasSouls\\Content\\Items\\Accessories\\Enchantments\\StardustEnchant.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Desktop\\FargowiltasSouls\\Content\\Items\\Accessories\\Enchantments\\StardustEnchant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T01:43:34.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GlekoStop.cs",
+              "DocumentMoniker": "C:\\Users\\Nikita\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\Content\\Items\\Accessories\\GlekoStop.cs",
+              "RelativeDocumentMoniker": "Content\\Items\\Accessories\\GlekoStop.cs",
+              "ToolTip": "C:\\Users\\Nikita\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\Content\\Items\\Accessories\\GlekoStop.cs",
+              "RelativeToolTip": "Content\\Items\\Accessories\\GlekoStop.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T21:27:12.058Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -50,11 +50,11 @@ namespace FinalFantasy.Content.Items.Accessories
             Item.height = 20;
             Item.noMelee = true;
             Item.accessory = true;
-            Item.defense = 100;
+            Item.defense = 20;
             Item.rare = ItemRarityID.Master;
             Item.buyPrice(0,0,0,1);
             Item.sellPrice(100, 0, 0, 0);
-            Item.DamageType = DamageClass.Summon;
+            Item.DamageType = DamageClass.Generic;
         }
 
         public static void TeleportPlayer(Player player)
@@ -73,7 +73,7 @@ namespace FinalFantasy.Content.Items.Accessories
                             //remoteClient - Which client receives the message (-1 = all clients); ignoreClient - Which client to ignore (-1 = none); text - Not used here (null); entityWhoAmI - The entity being teleported (player.whoAmI or npc.whoAmI); X - New X position of entity; Y - New Y position of entity
                             NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI, newPos.X, newPos.Y, 1);
                             //Server broadcasting message in ingame chat to clients
-                            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("BLACK NIGGERS"), Color.White, -1);
+                            //ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("GLEKS"), Color.White, -1);
                         }
                     }
                 }
@@ -82,7 +82,7 @@ namespace FinalFantasy.Content.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetDamage(DamageClass.Summon) += 0.50f;
+            player.GetDamage(DamageClass.Generic) += 0.50f;
             TeleportPlayer(player);
         }
 
