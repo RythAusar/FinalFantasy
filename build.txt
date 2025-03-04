@@ -1,4 +1,5 @@
 displayName = Final Fantasy
 author = Ezvold & Glek
-buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, Luminance.pdb, Luminance.dll, Luminance.xml
+icon = icon.png
+buildIgnore = .gitignore, *.sln, *.csproj, *.user, obj\*, bin\*, .vs\*, Properties\*, .git\*
 version = 0.1
