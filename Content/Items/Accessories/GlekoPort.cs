@@ -14,6 +14,7 @@ using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.Chat;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace FinalFantasy.Content.Items.Accessories
 {
@@ -95,25 +96,3 @@ namespace FinalFantasy.Content.Items.Accessories
         }
     }
 }
-
-
-/*
- * public override void UpdateAccessory(Player player, bool hideVisual)
-        {
-            player.GetDamage(DamageClass.Summon) += 0.50f;
-            if (KeybindSystem.GlekoPort.JustPressed)
-            {
-                Tile tile = Framing.GetTileSafely((int)Main.MouseWorld.X / 16, (int)Main.MouseWorld.Y / 16);
-                if (!tile.HasTile || IsTree(tile))
-                {
-                    //Vector2 newPos = new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35));
-
-                    player.Teleport(new Vector2((int)Main.MouseWorld.X, (int)(Main.MouseWorld.Y - 35)), 1, 0);
-                    if(Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server)
-                    {
-                        NetMessage.SendData(MessageID.TeleportEntity, -1, -1, Terraria.Localization.NetworkText.FromLiteral("Nigger has been teleported"), player.whoAmI);
-                    }
-                }
-            }
-        }
-*/
