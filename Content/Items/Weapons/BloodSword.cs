@@ -29,12 +29,12 @@ namespace FinalFantasy.Content.Items.Weapons
 
         public override void MeleeEffects(Player player, Rectangle hitbox)
         {
-            int dustType = DustID.LifeDrain;
+            /* int dustType = DustID.LifeDrain;
             Vector2 position = new Vector2(hitbox.X, hitbox.Y);
             int width = hitbox.Width;
             int height = hitbox.Height;
             
-            Dust.NewDust(position, width, height, dustType);
+            Dust.NewDust(position, width, height, dustType); */
            
             //FinalFantasy.SyncDust(dustType, position, width, height); 
             //DustID.Water_BloodMoon
@@ -45,10 +45,15 @@ namespace FinalFantasy.Content.Items.Weapons
 
         public override void HoldItem(Player player)
         {
-            if (player.itemAnimation > 0) {
-                Vector2 mouseWorld = Main.MouseWorld;
-                player.direction = (mouseWorld.X > player.Center.X) ? 1 : -1;
+            if (Main.myPlayer == player.whoAmI) 
+            {
+                if(player.itemAnimation > 0) 
+                {
+                    Vector2 mouseWorld = Main.MouseWorld;
+                    player.direction = (mouseWorld.X > player.Center.X) ? 1 : -1;
+                }
             }
+            
         }
 
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
