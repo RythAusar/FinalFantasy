@@ -1,5 +1,6 @@
 displayName = Final Fantasy
 author = Ezvold & Glek
 icon = icon.png
-buildIgnore = .gitignore, *.sln, *.csproj, *.user, obj\*, bin\*, .vs\*, Properties\*, .git\*
+buildIgnore = .gitignore, *.sln, *.csproj, *.user, obj\*, bin\*, .vs\*, Properties\*, .git\*, Luminance.dll, Luminance.pdb, Luminance.xml
 version = 0.1
+modReferences = Luminance

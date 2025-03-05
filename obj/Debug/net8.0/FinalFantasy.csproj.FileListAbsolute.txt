@@ -230,3 +230,5 @@ C:\Users\Nikita\Documents\My Games\Terraria\tModLoader\ModSources\FinalFantasy\o
 C:\Users\Nikita\Documents\My Games\Terraria\tModLoader\ModSources\FinalFantasy\obj\Debug\net8.0\refint\FinalFantasy.dll
 C:\Users\Nikita\Documents\My Games\Terraria\tModLoader\ModSources\FinalFantasy\obj\Debug\net8.0\FinalFantasy.pdb
 C:\Users\Nikita\Documents\My Games\Terraria\tModLoader\ModSources\FinalFantasy\obj\Debug\net8.0\ref\FinalFantasy.dll
+C:\Users\Nikita\Documents\My Games\Terraria\tModLoader\ModSources\FinalFantasy\bin\Debug\net8.0\Luminance_v1.0.9.dll
+C:\Users\Nikita\Documents\My Games\Terraria\tModLoader\ModSources\FinalFantasy\bin\Debug\net8.0\Luminance_v1.0.9.xml

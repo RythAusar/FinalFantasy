@@ -16,6 +16,7 @@
           "Hjson": "1.0.0.0",
           "Humanizer": "2.14.0.0",
           "log4net": "2.0.8.0",
+          "Luminance_v1.0.9": "1.0.0.0",
           "Microsoft.Build": "15.1.0.0",
           "Microsoft.Build.Framework": "15.1.0.0",
           "Microsoft.Build.Locator": "1.0.0.0",
@@ -135,6 +136,14 @@
           "log4net.dll": {
             "assemblyVersion": "2.0.8.0",
             "fileVersion": "2.0.8.0"
+          }
+        }
+      },
+      "Luminance_v1.0.9/1.0.0.0": {
+        "runtime": {
+          "Luminance_v1.0.9.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -910,6 +919,11 @@
       "sha512": ""
     },
     "log4net/2.0.8.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Luminance_v1.0.9/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
