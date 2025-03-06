@@ -25,8 +25,8 @@ namespace FinalFantasy.Content.Items.Weapons
             Item.shoot = ProjectileID.StarWrath;
             Item.shootSpeed = 16f;
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.UseSound = SoundID.Cockatiel;
-            Item.damage = 1488;
+            Item.UseSound = SoundID.DeerclopsScream;
+            Item.damage = 100000;
             Item.useTime = 10;
             Item.useAnimation = 10;
             Item.autoReuse = true;
