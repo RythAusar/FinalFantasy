@@ -2,6 +2,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+
+using FinalFantasy.Content.Buffs.DamageOverTime;
 using FinalFantasy.Content.Items.ItemsForCraft;
 
 namespace FinalFantasy.Content.Items.Tools 
@@ -33,12 +35,12 @@ namespace FinalFantasy.Content.Items.Tools
 
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            target.AddBuff(BuffID.OnFire, 30);
+            target.AddBuff(ModContent.BuffType<Bleeding>(), 150);
         }
 
         public override void OnHitPvp(Player player, Player target, Player.HurtInfo hurtInfo)
         {
-            target.AddBuff(BuffID.OnFire, 30);
+            target.AddBuff(ModContent.BuffType<Bleeding>(), 150);
         }
 
         public override void MeleeEffects(Player player, Rectangle hitbox)
