@@ -9,8 +9,9 @@ using Terraria.ModLoader;
 
 namespace FinalFantasy.Content.Items.Weapons
 {
-    class Ascalon : ModItem
+    class Ascalon : ModItem, ILocalizedModType
     {
+        public new string LocalizationCategory => "Items.Weapons.Melee";
         public override void SetStaticDefaults()
         {
             ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;

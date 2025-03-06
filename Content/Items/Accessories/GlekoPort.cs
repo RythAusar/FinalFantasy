@@ -19,9 +19,9 @@ using Luminance.Core.Graphics;
 
 namespace FinalFantasy.Content.Items.Accessories
 {
-    internal class GlekoPort : ModItem
+    internal class GlekoPort : ModItem, ILocalizedModType
     {
-
+        public new string LocalizationCategory => "Items.Accessories";
         public static bool isTree(Tile tile)
         {
             if (tile == null) return false;

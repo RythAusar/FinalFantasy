@@ -3,10 +3,15 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+using FinalFantasy.Content.Buffs;
+using FinalFantasy.Content.Items.ItemsForCraft;
+using FinalFantasy.Content.Buffs.DamageOverTime;
+
 namespace FinalFantasy.Content.Items.Weapons 
 {
-    public class BloodSword : ModItem 
+    public class BloodSword : ModItem, ILocalizedModType
     {
+        public new string LocalizationCategory => "Items.Weapons.Melee";
         public override void SetDefaults()
         {
             Item.width = 66;
@@ -16,6 +21,7 @@ namespace FinalFantasy.Content.Items.Weapons
             Item.useTime = 20;
             Item.useAnimation = 20;
             Item.autoReuse = true;
+            Item.useTurn = true;
 
             Item.DamageType = DamageClass.Melee;
             Item.damage = 50;
@@ -41,24 +47,28 @@ namespace FinalFantasy.Content.Items.Weapons
             //DustID.CrimtaneWeapons
             //DustID.VampireHeal
             //DustID.LifeDrain
+
+            if (Main.rand.NextBool(3)) 
+            {
+                int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.LifeDrain);
+            }
         }
 
         public override void HoldItem(Player player)
         {
-            if (Main.myPlayer == player.whoAmI) 
-            {
-                if(player.itemAnimation > 0) 
-                {
-                    Vector2 mouseWorld = Main.MouseWorld;
-                    player.direction = (mouseWorld.X > player.Center.X) ? 1 : -1;
-                }
-            }
             
         }
 
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            target.AddBuff(BuffID.OnFire, 60);
+            //target.AddBuff(BuffID.OnFire, 60);
+            target.AddBuff(ModContent.BuffType<Bleeding>(), 300);
+        }
+
+        public override void OnHitPvp(Player player, Player target, Player.HurtInfo hurtInfo)
+        {
+            //target.AddBuff(BuffID.OnFire, 60);
+            target.AddBuff(ModContent.BuffType<Bleeding>(), 300);
         }
 
         public override bool MeleePrefix() {
@@ -67,11 +77,11 @@ namespace FinalFantasy.Content.Items.Weapons
 
         public override void AddRecipes()
         {
-            CreateRecipe()
-                .AddIngredient(ModContent.ItemType<ItemsForCraft.ItemBlood>(), 50)
-                .AddIngredient(ItemID.SilverBroadsword)
-                .AddTile(TileID.Anvils)
-                .Register();
+            CreateRecipe().
+                AddIngredient<ItemBlood>(18).
+                AddIngredient(ItemID.SilverBroadsword).
+                AddTile(TileID.Anvils).
+                Register();
         }
     }
 }

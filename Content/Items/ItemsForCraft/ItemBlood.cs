@@ -3,10 +3,11 @@ using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace FinalFantasy.Content.Items.ItemsForCraft 
+namespace FinalFantasy.Content.Items.ItemsForCraft
 {
-    public class ItemBlood : ModItem 
+    public class ItemBlood : ModItem, ILocalizedModType
     {
+        public new string LocalizationCategory => "Items.Materials";
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 100;

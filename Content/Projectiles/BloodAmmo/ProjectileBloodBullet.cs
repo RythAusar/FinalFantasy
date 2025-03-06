@@ -10,8 +10,9 @@ using Terraria.ModLoader;
 
 namespace FinalFantasy.Content.Projectiles.BloodAmmo 
 {
-    public class ProjectileBloodBullet : ModProjectile 
+    public class ProjectileBloodBullet : ModProjectile, ILocalizedModType
     {
+        public new string LocalizationCategory => "Projectiles.Ranged";
         public override void SetStaticDefaults()
         {
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5;

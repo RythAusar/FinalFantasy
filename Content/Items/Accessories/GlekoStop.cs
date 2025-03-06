@@ -24,8 +24,9 @@ using Luminance.Core.Graphics;
 
 namespace FinalFantasy.Content.Items.Accessories
 {
-    public class GlekoStop : ModItem
+    public class GlekoStop : ModItem, ILocalizedModType
     {
+        public new string LocalizationCategory => "Items.Accessories";
         public override void SetStaticDefaults()
         {
             ItemID.Sets.AnimatesAsSoul[Item.type] = true;

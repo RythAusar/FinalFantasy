@@ -1,0 +1,9 @@
+GlekoPort: {
+	DisplayName: Gleko Port
+	Tooltip: ""
+}
+
+GlekoStop: {
+	DisplayName: Gleko Stop
+	Tooltip: ""
+}

@@ -1,0 +1,21 @@
+Mods: {
+	FinalFantasy: {
+		Keybinds: {
+			// GlekoStop.DisplayName: Gleko Stop
+			// GlekoPort.DisplayName: Gleko Port
+			// RandomBuff.DisplayName: Random Buff
+		}
+
+		Buffs: {
+			TimeStopBuff: {
+				// DisplayName: Time Stop Buff
+				// Description: Mods.FinalFantasy.Buffs.TimeStopBuff.Description
+			}
+
+			Bleeding: {
+				// DisplayName: Bleeding
+				// Description: Mods.FinalFantasy.Buffs.Bleeding.Description
+			}
+		}
+	}
+}

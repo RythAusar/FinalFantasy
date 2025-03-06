@@ -7,8 +7,9 @@ using Terraria.ModLoader;
 
 namespace FinalFantasy.Content.Items.Ammo.BloodAmmo
 {
-    public class BloodBullet : ModItem
+    public class BloodBullet : ModItem, ILocalizedModType
     {
+        public new string LocalizationCategory => "Items.Ammo"; // Doesn`t working, Why ?
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 99;
