@@ -96,6 +96,8 @@ namespace FinalFantasy.Content.Items.Accessories
             recipe.Register();
         }
 
+        
+
         public override bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
         {
             if (line.Mod == "Terraria" && line.Name == "ItemName")

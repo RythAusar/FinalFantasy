@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Stubble.Core.Settings;
 using Terraria;
+using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -25,7 +26,11 @@ namespace FinalFantasy.Content.Items.Weapons
             Item.shoot = ProjectileID.StarWrath;
             Item.shootSpeed = 16f;
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.UseSound = SoundID.DeerclopsScream;
+            //Item.UseSound = SoundID.DeerclopsScream;
+            Item.UseSound = new SoundStyle("FinalFantasy/Content/Sounds/Sounds_SFX_RadGunSuccess")
+            {
+                MaxInstances = 30
+            };
             Item.damage = 100000;
             Item.useTime = 10;
             Item.useAnimation = 10;
@@ -55,22 +60,22 @@ namespace FinalFantasy.Content.Items.Weapons
             }
         }
 
-
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            if(player.altFunctionUse == 2)
+            if(player.altFunctionUse == 2)//If right mouse click
             {
-                Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+               
+                Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);//Top left corner of your screen(in world coordinates) + your mouse position
                 float ceilingLimit = target.Y;
-                if(ceilingLimit > player.Center.Y - 200f)
+                if(ceilingLimit > player.Center.Y - 200f)//if your mouse cursor points to a position that is more than your character's Y - 200
                 {
                     ceilingLimit = player.Center.Y - 200f;
                 }
                 for (int i = 0; i < 3; i++)
                 {
-                    position = player.Center - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
-                    position.Y -= 100 * i;
-                    Vector2 heading = target - position;
+                    position = player.Center - new Vector2(Main.rand.NextFloat(100) * player.direction, 600f);//sets the spawn position of projectile
+                    position.Y -= 100 * i;//varies the spawn position of each of the 3 projectiles that is called in 1 frame
+                    Vector2 heading = target - position;//difference between mouse cursor(in world coordinates) and spawn position of a projectile
 
                     if (heading.Y < 0f)
                     {
@@ -82,16 +87,29 @@ namespace FinalFantasy.Content.Items.Weapons
                         heading.Y = 20f;
                     }
 
-                    heading.Normalize();
+                    heading.Normalize();//normalizes heading turning it into direction
                     heading *= velocity.Length();
                     heading.Y += Main.rand.Next(-40, 41) * 0.02f;
-                    Projectile.NewProjectile(source, position, heading, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
+                    Projectile.NewProjectile(source, position, heading, ProjectileID.StarWrath, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
+                    
                 }
             }
-            return false;
+            else//If left mouse click
+            {
+                Item.shoot = ProjectileID.DarkLance;
+                velocity *= 0.2f;
+                Vector2 target = new Vector2(Main.MouseWorld.X, Main.MouseWorld.Y);
+                position = new Vector2(player.Center.X, player.Center.Y - 200f);//spawn position of the projectile
+                Vector2 heading = target - position;
+                heading.Normalize();
+                heading *= velocity.Length();
+                Projectile.NewProjectile(source, position, heading, ProjectileID.IceBolt, damage * 2, knockback, player.whoAmI, 0f);
+            }
+                return false;
         }
         
 
+       
 
         public override bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
         {
@@ -113,6 +131,10 @@ namespace FinalFantasy.Content.Items.Weapons
                 return true;
             }
         }
+
+       //Effect AscalonEffect = ModContent.Load<Effect>("Effects/Ambient");   
+
+        
 
         public override void AddRecipes()
         {
