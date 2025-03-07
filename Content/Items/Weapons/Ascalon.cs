@@ -96,7 +96,7 @@ namespace FinalFantasy.Content.Items.Weapons
             }
             else//If left mouse click
             {
-                Item.shoot = ProjectileID.DarkLance;
+             
                 velocity *= 0.2f;
                 Vector2 target = new Vector2(Main.MouseWorld.X, Main.MouseWorld.Y);
                 position = new Vector2(player.Center.X, player.Center.Y - 200f);//spawn position of the projectile
