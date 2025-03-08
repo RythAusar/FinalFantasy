@@ -17,5 +17,19 @@ Mods: {
 				// Description: Mods.FinalFantasy.Buffs.Bleeding.Description
 			}
 		}
+
+		Items: {
+			NightOfGleks: {
+				// DisplayName: Night Of Gleks
+				// Tooltip: ""
+			}
+
+			NightOfGadza: {
+				// DisplayName: Night Of Gadza
+				// Tooltip: ""
+			}
+		}
+
+		// Projectiles.Glek.DisplayName: Glek
 	}
 }
