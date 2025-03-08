@@ -9,6 +9,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.Utilities;
+using FinalFantasy.Content.Tiles;
 
 namespace FinalFantasy.Content.Tiles
 {

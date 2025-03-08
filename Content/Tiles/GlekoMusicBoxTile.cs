@@ -10,6 +10,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.Utilities;
+using FinalFantasy.Content.Tiles;
 
 namespace FinalFantasy.Content.Tiles
 {
@@ -26,6 +27,7 @@ namespace FinalFantasy.Content.Tiles
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.LavaDeath = false;
             TileObjectData.newTile.DrawYOffset = 2;
+            TileObjectData.newTile.DrawXOffset = 2;
             TileObjectData.newTile.StyleLineSkip = 2;
             TileObjectData.addTile(Type);
 
