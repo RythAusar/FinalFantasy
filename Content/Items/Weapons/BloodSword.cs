@@ -16,7 +16,6 @@ namespace FinalFantasy.Content.Items.Weapons
         {
             Item.width = 66;
             Item.height = 66;
-
             Item.useStyle = ItemUseStyleID.Swing;
             Item.useTime = 20;
             Item.useAnimation = 20;

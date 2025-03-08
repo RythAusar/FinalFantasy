@@ -1,4 +1,5 @@
-﻿using Luminance.Core.Graphics;
+﻿using FinalFantasy.Content.Projectiles.Glek;
+using Luminance.Core.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Stubble.Core.Settings;
@@ -21,8 +22,8 @@ namespace FinalFantasy.Content.Items.Weapons
 
         public override void SetDefaults()
         {
-            Item.width = 120;
-            Item.height = 120;
+            Item.width = 40;
+            Item.height = 40;
             Item.shoot = ProjectileID.StarWrath;
             Item.shootSpeed = 16f;
             Item.useStyle = ItemUseStyleID.Swing;
@@ -95,15 +96,14 @@ namespace FinalFantasy.Content.Items.Weapons
                 }
             }
             else//If left mouse click
-            {
-             
-                velocity *= 0.2f;
+            { 
                 Vector2 target = new Vector2(Main.MouseWorld.X, Main.MouseWorld.Y);
-                position = new Vector2(player.Center.X, player.Center.Y - 200f);//spawn position of the projectile
+                position = new Vector2(player.Center.X, player.Center.Y - 10f);//spawn position of the projectile
+                //Vector2 heading = target - position;
                 Vector2 heading = target - position;
                 heading.Normalize();
                 heading *= velocity.Length();
-                Projectile.NewProjectile(source, position, heading, ProjectileID.IceBolt, damage * 2, knockback, player.whoAmI, 0f);
+                Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<Glek>(), damage * 2, knockback, player.whoAmI, 0f);
             }
                 return false;
         }

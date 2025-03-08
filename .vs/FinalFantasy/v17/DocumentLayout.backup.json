@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\High_\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{CE1A3A6B-96F0-4A65-B78A-32EE543C61FF}|FinalFantasy.csproj|c:\\users\\high_\\onedrive\\documents\\my games\\terraria\\tmodloader\\modsources\\finalfantasy\\content\\tiles\\glekomusicboxtile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE1A3A6B-96F0-4A65-B78A-32EE543C61FF}|FinalFantasy.csproj|solutionrelative:content\\tiles\\glekomusicboxtile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GlekoMusicBoxTile.cs",
-              "DocumentMoniker": "C:\\Users\\High_\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\Content\\Tiles\\GlekoMusicBoxTile.cs",
-              "RelativeDocumentMoniker": "Content\\Tiles\\GlekoMusicBoxTile.cs",
-              "ToolTip": "C:\\Users\\High_\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FinalFantasy\\Content\\Tiles\\GlekoMusicBoxTile.cs",
-              "RelativeToolTip": "Content\\Tiles\\GlekoMusicBoxTile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T01:49:02.165Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
