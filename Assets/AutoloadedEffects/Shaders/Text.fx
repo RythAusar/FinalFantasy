@@ -43,15 +43,18 @@ float4 MyShader(float4 sampleColor : COLOR0, float2 coords : TEXCOORD0) : COLOR0
 float4 ModifiedShader(float4 sampleColor : COLOR0, float2 coords : TEXCOORD0) : COLOR0
 {
     float4 color = tex2D(uImage0, coords);
-    float wave = frac(globalTime + (coords.x * 10)); // / frac(globalTime + (coords.y));
-    color.rgb *= (wave * mainColor) + (wave + 0.5) * secondaryColor;
+    //float wave = frac(globalTime + (coords.x * 10)); //sets a float number from 0 to 1
+    float wave = sin(globalTime * 7.0 + coords.x * 10) * 0.5 + 0.5; //The sine function creates a smooth oscillation, and we remap it from [-1, 1] to [0, 1].
+    float3 blendedColor = lerp(mainColor, secondaryColor, wave);
+    color.rgb *= blendedColor;
+    //color.rgb *= (wave * mainColor) + (wave + 0.5) * secondaryColor;
     return color * sampleColor * 2;
 }
 
 float4 DiagonalShader(float4 sampleColor : COLOR0, float2 coords : TEXCOORD0) : COLOR0
 {
     float4 color = tex2D(uImage0, coords);
-	float wave = frac(globalTime / 2 + coords.y / 2 + coords.x / 2);
+	float wave = frac(globalTime / 2 + coords.y / 2 + coords.x / 2);//sets a float number from 0 to 1
     color.rgb *= (wave * mainColor) + ((1 - wave) * secondaryColor);
 	
 

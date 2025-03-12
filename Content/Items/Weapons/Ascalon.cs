@@ -118,9 +118,11 @@ namespace FinalFantasy.Content.Items.Weapons
                 Main.spriteBatch.End();//ending drawing commands
                 Main.spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, null, Main.UIScaleMatrix);//starts sprite batch using Immediate mode. Immediate mode, each draw call is processed as soon as it's made, which is necessary when you want to change rendering states (like applying a shader).
                 ManagedShader shader = ShaderManager.GetShader("FinalFantasy.Text");//No need to load the shader through Load(). Luminance.dll does it for me. Just FinalFantasy.(shader file name)
-                shader.TrySetParameter("mainColor", new Color(252, 0, 50));//setting main color
+                shader.TrySetParameter("mainColor", new Color(158, 39, 232));//Color PINK
+                //shader.TrySetParameter("mainColor", new Color(252, 0, 50));//setting main color. Color RED
                 shader.TrySetParameter("secondaryColor", new Color(0, 255, 200));//setting secondary color
-                shader.Apply("ModifiedShader");//passing a pass. This time it is PulseUpwards
+                shader.Apply("ModifiedShader");
+                //shader.Apply("ModifiedShader");//passing a pass. This time it is ModifiedShader
                 Utils.DrawBorderString(Main.spriteBatch, line.Text, new Vector2(line.X, line.Y), Color.White, 1);//draw tooltip
                 Main.spriteBatch.End();
                 Main.spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, Main.UIScaleMatrix);
